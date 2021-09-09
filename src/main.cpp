@@ -91,6 +91,7 @@ static void send_cmd_to_node(uint8_t node_id, uint8_t cmd_code) {
   if (mesh.write(mesh.getAddress(node_id),&cmd_code,'C',sizeof(cmd_code)) == true) {
     Serial.println("Command sent.");
     //client.write("Data sent to node");
+    display_incoming_date(2000);
   } else {
     Serial.println("Command couldn't be send.");
     //client.write("Data could not be sent to node");
@@ -122,5 +123,5 @@ static void display_incoming_date(uint32_t m_sec)
         }
       }
   }
-  display_incoming_date(2000);
+  
 }
